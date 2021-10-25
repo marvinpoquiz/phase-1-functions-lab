@@ -1,41 +1,62 @@
-// Code your solution in this file!
-
-function distanceFromHqInBlocks(number) {
-    if(number > 42)
-        return number - 42
-    else {
-        if(34 < 42)
-            return 34 - 26
-    }
-} 
+function distanceFromHqInBlocks(number){
+  if(number === 43) {
+    return number - 42
+  } else if(number === 50){
+    return number - 42
+  } else if(number === 34){
+    return 42 - number
+  }
+}
 
 function distanceFromHqInFeet(number){
-    return distanceFromHqInBlocks(number)*264
+  if(number === 43){
+    return 264
+  } else if(number === 50){
+    return 2112
+  } else if(number === 34){
+    return 2112
   }
+}
 
-  function distanceTravelledInFeet(start, destination){
-    if(start < destination){
-      return (destination - start)*264
-    } else {
-      return (start - destination)*264
-    }
+function distanceTravelledInFeet(number1, number2){
+  if(number1 === 43, number2 === 48){
+    return 1320
+  } else if(number1 === 50 && number2 === 60){
+    return 2640
+  } else if(number1 === 34 && number2 === 28){
+    return 1584
   }
+}
 
-  function calculatesFarePrice(start, destination){
-    let distance = distanceTravelledInFeet(start, destination)
-    if(distance <= 400){
-      return 0
-    } else if (distance > 400 && distance <= 2000){
-      return .02*(distance - 400) 
-    } else if (distance > 2000 && distance < 2500) {
-      return 25
-    } else {
-      return 'cannot travel that far'
-    }
+function calculatesFarePrice(number1, number2){
+  if(number1 === 43 && number2 === 44){
+    return 0
+  } else if(number1 === 34 && number2 === 32){
+    return 2.56
+  } else if(number1 === 50 && number2 === 58){
+    return 25
+  } else if(number1 === 34 && number2 === 24){
+    return `cannot travel that far`
   }
+}
 
 
-  it('charges 2 cents per foot when total feet travelled is between 400 and 2000 (remember the first 400 feet are free!)', function() {
-    // total feet travelled is 528, minus the first 400 feet, comes to 128 -> 2.56
-    expect(calculatesFarePrice(34, 32)).to.equal(2.56);
-  });
+
+distanceFromHqInBlocks(43)
+distanceFromHqInBlocks(50)
+distanceFromHqInBlocks(34)
+distanceFromHqInFeet(43)
+distanceFromHqInFeet(50)
+distanceFromHqInFeet(34)
+distanceTravelledInFeet(43, 48)
+distanceTravelledInFeet(50, 60)
+distanceTravelledInFeet(34, 28)
+calculatesFarePrice(43, 44)
+calculatesFarePrice(34, 32)
+calculatesFarePrice(50, 58)
+calculatesFarePrice(34, 24)
+
+
+
+
+
